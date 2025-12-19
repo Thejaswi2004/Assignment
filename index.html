@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" >
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <nav class="nav-links" id="navLinks">
+        <a href="#">Home</a>
+        <a href="#">Order</a>
+        <a href="#">Food</a>
+        <a href="#">Restaurant</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Contact Us</a>
+      </nav>
+      <button class="burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="top-section" style="background: linear-gradient(90deg,#fff1b9 0% , #ffb3e0 100%);">
+    <div class="top-left">
+      <h1>L O R E M I P S U M</h1>
+      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+id est vitae dolor rhoncus tristique. Maecenas metus quam,
+rhoncus euismod lorem in, sollicitudin viverra eros. Donec
+dictum luctus quam ut tristique. Curabitur nec faucibus purus.
+Quisque congue sem nec justo mollis, in tincidunt erat pretium.
+Sed pulvinar, massa ac porta viverra.</p>
+      <button style="border-radius: 0px; padding-left: 70px; padding-right: 70px;">Click Me</button>
+    </div>
+    <div class="top-right">
+      <img src="./images/pexels-robin-stickel-70497.jpg" alt="Top Image">
+    </div>
+  </section>
+  <!-- <div style="background-color: black; padding: 5px;"></div> -->
+
+  <div class="bottom-section" style="background: linear-gradient(90deg,#fff1b9 0%,#f893d0 100%); padding-top: 100px; padding-left: 0px;  width: 100%;">
+    <div class="gallery" style="background-color: transparent; padding-left: 50px;">
+      <div class="col-left">
+        <img src="./images/pexels-rachel-claire-6752433.jpg" alt="Small Top ">
+        <img src="./images/pexels-eva-bronzini-6141651.jpg" alt="Small Bottom">
+        
+      </div>
+      <div class="col-mid">
+        <img src="images/pexels-mister-mister-3434523.jpg" alt="Tall Image">
+      </div>
+    </div>
+    
+    <aside class="card">
+      <p>LOREM IPSUM</p>
+      <h2>LOREM IPSUM<br>SET ADEMIR</h2>
+      <div class="cta">Click ➜</div>
+    </aside>
+    
+  </div>
+
+<script>
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+
+  function checkWidth() {
+    if(window.innerWidth <= 1024){
+      navLinks.classList.remove('open');
+    }
+  }
+  window.addEventListener('resize', checkWidth);
+  checkWidth();
+
+  burger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      if(window.innerWidth <= 1024){
+        navLinks.classList.remove('open');
+        burger.classList.remove('open');
+      }
+    });
+  });
+</script>
+</body>
+</html>
